@@ -1,0 +1,9 @@
+---
+  - name: update apt repo
+    action: apt update-cache=yes
+      
+  - name: install mysql-server 
+    action: apt name=mysql-server state=installed
+
+  - name: service mysql  
+    action: service name=mysql state=started 

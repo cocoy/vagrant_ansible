@@ -1,0 +1,14 @@
+---
+  - apt: pkg='python-software-properties' state=installed
+
+  - name: "add nginx ppa "
+    apt_repository: repo=ppa:nginx/stable
+
+  - name: update apt-get
+    apt: update_cache=yes
+
+  - name: install nginx 
+    apt: pkg=nginx state=installed
+
+  - name: service nginx 
+    service: name=nginx state=started 
