@@ -1,3 +1,6 @@
+=======
+vagrant_ansible
+===============
 
 ## Vagrant+Ansible+Nginx+MySQL 
 
@@ -35,4 +38,5 @@ The Vagrantfile included here define two VMs: a web using nginx and db using mys
 
     $ vagrant provision web 
     $ vagrant provision db 
+
 
