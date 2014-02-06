@@ -1,0 +1,3 @@
+- name: restart apache2
+  sudo: true
+  action: service name=apache2 state=restarted

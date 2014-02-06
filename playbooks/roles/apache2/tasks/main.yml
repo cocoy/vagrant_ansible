@@ -1,0 +1,26 @@
+- name: install apache2
+  sudo: true
+  apt: pkg=apache2
+  notify: restart apache2
+
+- name: generate httpd.conf
+  sudo: true
+  template:
+    src=httpd.conf.j2
+    dest=/etc/apache2/httpd.conf
+    owner=root
+    group=root
+    mode=0644
+  notify: restart apache2
+
+- name: apache2 - enable mod-rewrite
+  sudo: true
+  command: a2enmod rewrite
+    creates=/etc/apache2/mods-enabled/rewrite.load
+  notify: restart apache2
+
+- name: apache2 - disable default site
+  sudo: true
+  command: a2dissite default
+    removes=/etc/apache2/sites-enabled/000-default
+  notify: restart apache2

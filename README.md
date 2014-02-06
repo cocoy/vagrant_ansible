@@ -39,4 +39,8 @@ The Vagrantfile included here define two VMs: a web using nginx and db using mys
     $ vagrant provision web 
     $ vagrant provision db 
 
+Notes: 
+
+Adding jenkins roles from: https://github.com/ICTO/ansible-jenkins
+Adding apache2 roles from: https://github.com/laggyluke/ansible-role-apache2
 
