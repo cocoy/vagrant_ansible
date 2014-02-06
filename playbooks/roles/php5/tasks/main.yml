@@ -1,0 +1,27 @@
+- name: install php5 packages
+  sudo: true
+  apt: pkg=$item
+  with_items:
+    - php5
+    - libapache2-mod-php5
+    - php5-cli
+    - php5-mysql
+    - php5-curl
+    - php-apc
+  notify: restart apache2
+
+- name: php5 - generate apc.ini
+  sudo: true
+  copy:
+    src=apc.ini
+    dest=/etc/php5/conf.d/apc.ini
+    owner=root
+    group=root
+    mode=0644
+  notify: restart apache2
+
+- name: install php5-xdebug
+  sudo: true
+  apt: pkg=php5-xdebug
+  notify: restart apache2
+  when: php5.xdebug
