@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       web.vm.network :private_network, ip: "192.168.33.10"
       web.ssh.forward_agent = true
       #web.vm.synced_folder ".", "/vagrant", :nfs => true
-      web.vm.network :forwarded_port, host: 8080, guest: 8080
+      web.vm.network :forwarded_port, host: 8080, guest: 80
 
       web.vm.provision "ansible" do |ansible| 
         ansible.sudo = true
