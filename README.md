@@ -26,8 +26,7 @@ The Vagrantfile included here define two VMs: a web using nginx and db using mys
 
     $ mkdir vagrant-test
     $ cd vagrant-test
-    $ vagrant init precise64 http://files.vagrantup.com/precise64.box
-
+    $ vagrant box add precise64  http://files.vagrantup.com/precise64.box
 
 ### Running db and web VM's: 
 
@@ -43,4 +42,7 @@ The Vagrantfile included here define two VMs: a web using nginx and db using mys
 
    * Adding jenkins roles from: https://github.com/ICTO/ansible-jenkins
    * Adding apache2/php5 roles from: https://github.com/laggyluke/ansible-role-apache2
+
+### Using Ansible Galaxy Added
+   * How to Setup is here http://bit.ly/1gRToit 
 
