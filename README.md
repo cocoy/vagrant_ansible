@@ -26,10 +26,13 @@ The Vagrantfile included here define two VMs: a web using nginx and db using mys
 
     $ mkdir vagrant-test
     $ cd vagrant-test
-    $ vagrant box add precise64  http://files.vagrantup.com/precise64.box
+    $ vagrant box add precise64 http://files.vagrantup.com/precise64.box
+
 
 ### Running db and web VM's: 
 
+    $ git clone https://github.com/cocoy/vagrant_ansible.git
+    $ cd vagrant_ansible 
     $ vagrant up web 
     $ vagrant up db 
 
