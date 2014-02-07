@@ -1,0 +1,16 @@
+--- 
+  - name: "add /var/www folder "
+    file: path=/var/www state=directory 
+
+  - name: create site nginx 
+    copy: src=fpm-site.conf dest=/etc/nginx/sites-enabled/fpm-site 
+
+  - name: remove default site nginx 
+    file: path=/etc/nginx/sites-enabled/default state=absent 
+
+  - name: copy sample php file 
+    copy: src=index.php dest=/var/www/index.php
+
+  - name: reload nginx
+    service: name=nginx state=reloaded 
+
