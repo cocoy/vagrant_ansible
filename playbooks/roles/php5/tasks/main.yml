@@ -1,6 +1,6 @@
 - name: install php5 packages
   sudo: true
-  apt: pkg=$item
+  apt: pkg={{item}}
   with_items:
     - php5
     - libapache2-mod-php5
