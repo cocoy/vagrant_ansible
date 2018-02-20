@@ -1,0 +1,24 @@
+---
+
+### Sample run: dynamic hosts 
+##  ansible-playbook -i localhost,  playbook/dynamic.yml -c local
+## 
+
+- name: this is a play at the top level of a file
+  hosts: all
+  tasks:
+  - name: say hi
+    tags: foo
+    shell: echo "hi..."
+
+  - name: adding new host 
+    add_host:
+      name: db2 
+      #ansible_ssh_host: "{{ inventory_hostname }}"
+      ansible_connection: local
+      become: true 
+      groups: db 
+
+
+- import_playbook: web.yml
+- import_playbook: db.yml
