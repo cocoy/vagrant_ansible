@@ -1,5 +1,5 @@
 ---
- - hosts: all
+ - hosts: db
 
    roles:
     - common 

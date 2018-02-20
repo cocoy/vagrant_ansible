@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ansible.sudo = true
         ansible.playbook = "playbooks/web.yml"
         #ansible.verbose = "vvv"
-        #ansible.inventory_path= "vagrant_hosts"
+        ansible.inventory_path= "vagrant_hosts"
         ansible.host_key_checking = false
       end 
   end
@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ansible.sudo = true
         ansible.playbook = "playbooks/db.yml"
         #ansible.verbose = "vvv"
-        #ansible.inventory_path= "vagrant_hosts"
+        ansible.inventory_path= "vagrant_hosts"
         ansible.host_key_checking = false
       end 
   end

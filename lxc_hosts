@@ -1,0 +1,6 @@
+### Define your target hosts here
+##  in these case these are lxc hosts, reusing the same roles.
+###
+web ansible_ssh_host=10.224.49.146 ansible_connection=local
+
+db ansible_ssh_host=10.224.49.146 ansible_connection=local 

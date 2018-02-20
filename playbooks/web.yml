@@ -1,6 +1,8 @@
 ---
- - hosts: all
+ - hosts: web
+   become_method: sudo
+   become: true
 
    roles:
-    - common 
+    - common
     - nginx
