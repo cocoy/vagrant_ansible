@@ -1,6 +1,3 @@
-=======
-vagrant_ansible
-===============
 
 ## Vagrant+Ansible+Nginx+MySQL 
 
